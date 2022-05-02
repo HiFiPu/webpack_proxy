@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script> -->
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      ul,
+      li {
+        list-style: none;
+      }
+      a{
+          text-decoration: none;
+      }
+      .cover {
+        width: 100%;
+        height: 100%;
+        background: yellow;
+      }
+      .wrapper {
+        float: left;
+        width: calc(100% - 200px);
+        height: 100%;
+        background-color: hotpink;
+        overflow: auto;
+      }
+      .bookright {
+        float: right;
+        width: 200px;
+        height: 100%;
+        background-color: gainsboro;
+        text-align: center;
+
+      }
+      .centli {
+        /* margin-top: 300px; */
+      }
+      #section1 {
+        width: 100%;
+        height: 600px;
+        background-color: green;
+      }
+      #section2 {
+        width: 100%;
+        height: 600px;
+        background-color: blue;
+      }
+      #section3 {
+        width: 100%;
+        height: 600px;
+        background-color: purple;
+      }
+      #section4 {
+        width: 100%;
+        height: 1600px;
+        background-color: skyblue;
+      }
+      #section5 {
+        width: 100%;
+        height: 600px;
+        background-color: palegoldenrod;
+      }
+      .current{
+          color: yellow;
+      }
+      li a{
+          color: plum;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cover">
+      <div class="wrapper">
+        <p class="section" id="section1">section1</p>
+        <p class="section" id="section2">section2</p>
+        <p class="section" id="section3">section3</p>
+        <p class="section" id="section4">section4</p>
+        <p class="section" id="section5">section5</p>
+      </div>
+
+      <div class="bookright">
+        <ul class="centli">
+          <li>
+            <a href="#section1" rel="external nofollow" class="current"
+              >section1</a
+            >
+          </li>
+          <li><a href="#section2" rel="external nofollow">section2</a></li>
+          <li><a href="#section3" rel="external nofollow">section3</a></li>
+          <li><a href="#section4" rel="external nofollow">section4</a></li>
+          <li><a href="#section5" rel="external nofollow">section5</a></li>
+        </ul>
+      </div>
+    </div>
+    <script>
+     let scrollEl = document.querySelector('.wrapper')
+     let sectionAll = document.querySelectorAll('.section')
+    
+     console.log(sectionAll,'.....',sectionAll.length)
+     scrollEl.addEventListener('scroll',(e)=>{
+      for(let i=0;i<sectionAll.length;i++){
+        if(scrollEl.scrollTop==sectionAll[i].clientHeight){
+          console.log(sectionAll[i].clientHeight)
+            // console.log(scrollEl.offsetLeft,scrollEl.offsetTop,scrollEl.scrollHeight,scrollEl.scrollTop)
+         }
+        
+     }
+         
+     })
+    </script>
+  </body>
+</html>

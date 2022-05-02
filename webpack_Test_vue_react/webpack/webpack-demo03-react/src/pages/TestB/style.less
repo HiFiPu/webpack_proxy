@@ -1,0 +1,76 @@
+.divhover{
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    transition: width 2s;
+    color: wheat;
+    .inner{
+        position: relative;
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        display: none;
+        transition: display 3s;
+        span{
+            position: absolute;
+            // opacity: 0;
+            // transition: opacity 2s 3s;
+            transform: translate3d(0,18px,0);
+            transition: transform 3s;
+        }
+        
+    }
+    
+}
+.divhover:hover .inner span{
+    // width: 200px;
+    // transition: transform 3s;
+    transform: translate3d(0,1px,0);
+    // display: block;
+    // .inner{
+    //     display: block;
+    //     span{
+    //         transform: translate3d(0,1px,0);
+    //     }
+    // }
+   
+    // animation: mymove 5s forwards;
+}
+@keyframes mymove {
+  25% {
+    width: 125px;
+    .inner{
+        display: block;
+        span{
+            opacity: 0;
+        }
+    }
+  }
+  50% {
+    width: 125px;
+    .inner{
+        display: block;
+        span{
+            opacity: 0;
+        }
+    }
+  }
+  75% {
+    width: 175px;
+    .inner{
+        display: block;
+        span{
+            opacity: 1;
+        }
+    }
+  }
+  100% {
+    width: 200px;
+    .inner{
+        display: block;
+        span{
+            opacity: 1;
+        }
+    }
+  }
+}
